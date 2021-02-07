@@ -10,8 +10,8 @@ import { AuthGuard } from './_helpers/auth.guard';
 const routes: Routes = [
   { path: '', component: HomeComponent, canActivate: [AuthGuard] },
   { path: 'login', component: LoginComponent },
-  { path: 'ware-house-product-list', component: WareHouseProductListComponent },
-  { path: 'ware-house-product-list/:id', component: WareHouseProductDetailComponent },
+  { path: 'ware-house-product-list', component: WareHouseProductListComponent, canActivate: [AuthGuard]  },
+  { path: 'ware-house-product-list/:id', component: WareHouseProductDetailComponent, canActivate: [AuthGuard]  },
   {
     path: 'ware-house-product-edit/:id/edit',
     // canDeactivate: [ProductEditGuard],

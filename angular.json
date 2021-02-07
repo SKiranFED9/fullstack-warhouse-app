@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "fullstack-warhouse-app"
+    }
+  },
+  "defaultProject": "fullstack-warhouse-app",
+  "cli": {
+    "analytics": "20fb489c-5aff-45ec-8653-fbfa9ebbf3f9"
+  }
 }

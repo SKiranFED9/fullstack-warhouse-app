@@ -6,18 +6,28 @@
     "sourceMap": true,
     "declaration": false,
     "downlevelIteration": true,
-    "experimentalDecorators": true,
     "module": "esnext",
     "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
     "importHelpers": true,
     "target": "es2015",
+    "typeRoots": [
+      "node_modules/@types"
+    ],
+    "paths": {
+      "@angular/*": [ "node_modules/@angular/*"]
+    },
     "lib": [
       "es2018",
       "dom"
     ]
   },
   "angularCompilerOptions": {
+    "enableIvy": false,
     "fullTemplateTypeCheck": true,
-    "strictInjectionParameters": true
+    "strictInjectionParameters": true,
+    "skipTemplateCodegen": false,
+    "strictMetadataEmit": false
   }
 }

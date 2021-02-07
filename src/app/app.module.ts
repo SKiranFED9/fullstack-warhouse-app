@@ -7,10 +7,13 @@ import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
 
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BasicAuthInterceptor } from './_helpers/basic-auth.interceptor';
 import { ErrorInterceptor } from './_helpers/error.interceptor';
 import { fakeBackendProvider } from './_helpers/fake-backend';
+import { WarehouseDataModule } from './warehouse-data/warehouse-data.module';
+import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { ProductData } from './warehouse-data/ware-house-data';
 
 @NgModule({
   declarations: [
@@ -22,8 +25,12 @@ import { fakeBackendProvider } from './_helpers/fake-backend';
     BrowserModule,
     ReactiveFormsModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+    InMemoryWebApiModule.forRoot(ProductData),
+    FormsModule,
+    WarehouseDataModule
   ],
+
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: BasicAuthInterceptor, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
